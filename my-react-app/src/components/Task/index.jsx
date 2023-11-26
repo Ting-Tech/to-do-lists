@@ -1,17 +1,19 @@
 import styles from './task.module.css';
 import { TbTrash } from 'react-icons/tb';
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
-export function Task() {
+export function Task({ task, onComplete }) {
     return (
         <div className={styles.task}>
-            <button className={styles.checkContainer}>
-                <div />
+            <button className={styles.checkContainer} onClick={() => onComplete(task.id)}>
+                {task.isCompleted ? <IoMdCheckmarkCircleOutline /> : <div />}
             </button>
 
-            <p>abc</p>
+            <p>{task.title}</p>
+
             <button className={styles.deleteButton}>
                 <TbTrash size={20} />
             </button>
-        </div>
+        </div >
     )
 }
