@@ -9,7 +9,7 @@ export function Task({ task, onComplete }) {
                 {task.isCompleted ? <IoMdCheckmarkCircleOutline /> : <div />}
             </button>
 
-            <p>{task.title}</p>
+            <p className={task.isCompleted ? styles.textCompleted : ""}>{task.title}</p>
 
             <button className={styles.deleteButton}>
                 <TbTrash size={20} />
