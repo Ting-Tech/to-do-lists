@@ -49,7 +49,13 @@ function App() {
       }
       return task;
     });
+    sortTasks(newTasks);
     setTasksAndSave(newTasks);
+  }
+
+  function sortTasks(tasks) {
+    const sortMethod = (a, b) => a.isCompleted;
+    tasks.sort(sortMethod);
   }
 
   return (
